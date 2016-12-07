@@ -79,6 +79,108 @@ describe('getStateRetirementDate', () => {
 
 
 	// TODO(GK): Add Pensions act 2011
+	it('should return 2016-07-06 when a DOB of 1953-04-06 is applied to a Female', () => {
+		assert.equal('2016-07-06', getStateRetirementDate('1953-04-06', 'F'));
+	});
+
+	it('should return 2016-07-06 when a DOB of 1953-05-05 is applied to a Female', () => {
+		assert.equal('2016-07-06', getStateRetirementDate('1953-05-05', 'F'));
+	});
+
+	it('should NOT return 2016-07-06 when a DOB of 1953-05-05 is applied to a Male', () => {
+		assert.notEqual('2016-07-06', getStateRetirementDate('1953-05-05', 'M'));
+	});
+
+	it('should return 2016-11-06 when a DOB of 1953-05-06 is applied to a Female', () => {
+		assert.equal('2016-11-06', getStateRetirementDate('1953-05-06', 'F'));
+	});
+
+	it('should return 2016-11-06 when a DOB of 1953-06-05 is applied to a Female', () => {
+		assert.equal('2016-11-06', getStateRetirementDate('1953-06-05', 'F'));
+	});
+
+	it('should NOT return 2016-11-06 when a DOB of 1953-06-05 is applied to a Male', () => {
+		assert.notEqual('2016-11-06', getStateRetirementDate('1953-06-05', 'M'));
+	});
+
+	it('should return 2017-03-06 when a DOB of 1953-06-06 is applied to a Female', () => {
+		assert.equal('2017-03-06', getStateRetirementDate('1953-06-06', 'F'));
+	});
+
+	it('should return 2017-03-06 when a DOB of 1953-07-05 is applied to a Female', () => {
+		assert.equal('2017-03-06', getStateRetirementDate('1953-07-05', 'F'));
+	});
+
+	it('should NOT return 2017-03-06 when a DOB of 1953-07-05 is applied to a Male', () => {
+		assert.notEqual('2017-03-06', getStateRetirementDate('1953-07-05', 'M'));
+	});
+
+	it('should return 2017-07-06 when a DOB of 1953-07-06 is applied to a Female', () => {
+		assert.equal('2017-07-06', getStateRetirementDate('1953-07-06', 'F'));
+	});
+
+	it('should return 2017-07-06 when a DOB of 1953-08-05 is applied to a Female', () => {
+		assert.equal('2017-07-06', getStateRetirementDate('1953-08-05', 'F'));
+	});
+
+	it('should NOT return 2017-07-06 when a DOB of 1953-08-05 is applied to a Male', () => {
+		assert.notEqual('2017-07-06', getStateRetirementDate('1953-08-05', 'M'));
+	});
+
+	it('should return 2017-11-06 when a DOB of 1953-08-06 is applied to a Female', () => {
+		assert.equal('2017-11-06', getStateRetirementDate('1953-08-06', 'F'));
+	});
+
+	it('should return 2017-11-06 when a DOB of 1953-09-05 is applied to a Female', () => {
+		assert.equal('2017-11-06', getStateRetirementDate('1953-09-05', 'F'));
+	});
+
+	it('should NOT return 2017-11-06 when a DOB of 1953-09-05 is applied to a Male', () => {
+		assert.notEqual('2017-11-06', getStateRetirementDate('1953-09-05', 'M'));
+	});
+
+	it('should return 2018-03-06 when a DOB of 1953-09-06 is applied to a Female', () => {
+		assert.equal('2018-03-06', getStateRetirementDate('1953-09-06', 'F'));
+	});
+
+	it('should return 2018-03-06 when a DOB of 1953-10-05 is applied to a Female', () => {
+		assert.equal('2018-03-06', getStateRetirementDate('1953-10-05', 'F'));
+	});
+
+	it('should NOT return 2018-03-06 when a DOB of 1953-10-05 is applied to a Male', () => {
+		assert.notEqual('2018-03-06', getStateRetirementDate('1953-10-05', 'M'));
+	});
+
+	it('should return 2018-07-06 when a DOB of 1953-10-06 is applied to a Female', () => {
+		assert.equal('2018-07-06', getStateRetirementDate('1953-10-06', 'F'));
+	});
+
+	it('should return 2018-07-06 when a DOB of 1953-11-05 is applied to a Female', () => {
+		assert.equal('2018-07-06', getStateRetirementDate('1953-11-05', 'F'));
+	});
+
+	it('should NOT return 2018-07-06 when a DOB of 1953-11-05 is applied to a Male', () => {
+		assert.notEqual('2018-07-06', getStateRetirementDate('1953-11-05', 'M'));
+	});
+
+	it('should return 2018-11-06 when a DOB of 1953-11-06 is applied to a Female', () => {
+		assert.equal('2018-11-06', getStateRetirementDate('1953-11-06', 'F'));
+	});
+
+	it('should return 2018-11-06 when a DOB of 1953-12-05 is applied to a Female', () => {
+		assert.equal('2018-11-06', getStateRetirementDate('1953-12-05', 'F'));
+	});
+
+	it('should NOT return 2018-11-06 when a DOB of 1953-12-05 is applied to a Male', () => {
+		assert.notEqual('2018-11-06', getStateRetirementDate('1953-12-05', 'M'));
+	});
+
+
+
+
+
+
+
 	it('should return 2020-10-06 when a DOB of 1954-10-06 is applied to a Female', () => {
 		assert.equal('2020-10-06', getStateRetirementDate('1954-10-06', 'F'));
 	});
