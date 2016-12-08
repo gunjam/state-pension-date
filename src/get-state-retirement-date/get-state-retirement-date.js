@@ -53,9 +53,9 @@ const getStatePensionDate = function (dateOfBirth, gender) {
 				// move the retirement date 'forwards' to 01 March.
 				// However, the 'Pensions act 2014' requires people born on the
 				// 31st of a month, who find themselves with a retirement month
-				// that does not have a 31st, are moved 'backwards' to the 30th.
+				// that does not have a 31st, to be moved 'backwards' to the 30th.
 				if (dateOfBirthDate.getDate() !== statePensionDate.getDate()) {
-					// So if DOB was a 29 feb, we move them forwards
+					// So, if DOB was a 29 feb, we move them forwards
 					if (dateOfBirthDate.getDate() === 29 && dateOfBirthDate.getMonth() === 1) {
 						statePensionDate.setMonth(statePensionDate.getMonth() + 1);
 					} else {
