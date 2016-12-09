@@ -1,6 +1,6 @@
 const express = require('express');
 
-const getStateRetirementDate = require('./src/get-state-retirement-date/get-state-retirement-date');
+const getStateRetirementDate = require('./src/get-state-pension-date/get-state-pension-date');
 
 const app = express();
 
@@ -13,9 +13,9 @@ app.get('/', (request, response) => {
 app.get('/:dob/:gender', (request, response) => {
 	const dateOfBirth = request.params.dob;
 	const gender = request.params.gender;
-	const stateRetirementDate = getStateRetirementDate(dateOfBirth, gender);
+	const statePensionDate = getStateRetirementDate(dateOfBirth, gender);
 
-	response.send(`Calculated retirement date is: ${stateRetirementDate}`);
+	response.send(`Calculated pension date is: ${statePensionDate}`);
 });
 
 app.listen(port, () => {
