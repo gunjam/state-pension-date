@@ -18,6 +18,20 @@
 //			to 'Males'.  F indicates that this rule only applies to 'Females'.
 //			And '' indicates that this rule applies to both Male and Female
 //			genders.
+//
+//	pensionDate: has the following...
+//			type: can have the values 'fixed' or 'age'.
+//
+//			value: This will be present for 'fixed' types, and specifies a fixed
+//					date on which the person will reach state pension age.
+//
+//			Years: This will be present for 'age' types, and specifies the
+//					number of years that will be added to the date of birth in
+//					order to calculate state pension age.
+//
+//			Months: This will be present for 'age' types, and specifies the
+//					number of months that will be added to the date of birth in
+//					order to calculate state pension age.
 const statePensionAgeData = [
 	{
 		periodStart: '',
@@ -782,6 +796,6 @@ const statePensionAgeData = [
 			months: 0
 		}
 	}
-];
+]; // End statePensionAgeData
 
 module.exports = statePensionAgeData;

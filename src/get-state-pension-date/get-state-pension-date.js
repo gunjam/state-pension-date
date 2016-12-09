@@ -11,6 +11,7 @@ const statePensionAgeData = require('./spa-data');
 const getStatePensionDate = function (dateOfBirth, gender) {
 	let result;
 
+	// Don't bother going any further if the input params are not valid
 	if (validateInputs(dateOfBirth, gender) === false) {
 		return result;
 	}
@@ -31,7 +32,7 @@ const getStatePensionDate = function (dateOfBirth, gender) {
 
 			if ((currentElement.periodStart === '' || (dateOfBirthDate.getTime() >= periodStartDate.getTime())) &&
 				(currentElement.periodEnd === '' || (dateOfBirthDate.getTime() <= periodEndDate.getTime()))) {
-				// Everything checks out, so set result to 'matched'
+				// Everything checks out, so we found a match
 				matched = true;
 			}
 		}
@@ -39,8 +40,8 @@ const getStatePensionDate = function (dateOfBirth, gender) {
 		return matched;
 	});
 
-	// If we find a match for our date of birth, then use the matching rule to
-	// work out the retirement date
+	// If we found a match for our date of birth/gender, then use that matching
+	// rule to work out the retirement date
 	if (ageData !== undefined) {
 		switch (ageData.pensionDate.type) {
 			case 'fixed': {
@@ -96,6 +97,7 @@ function validateInputs(dateOfBirth, gender) {
 
 	result = isValidYYYYMMDDDate(dateOfBirth);
 
+	// We only support gender of 'M', 'F' & ''
 	if (typeof gender === 'string') {
 		if ((gender.toUpperCase() !== 'M') &&
             (gender.toUpperCase() !== 'F') &&
