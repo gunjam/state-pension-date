@@ -1,6 +1,6 @@
 {
   "name": "state-pension-age",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "src/get-state-pension-date/get-state-pension-date.js",
   "scripts": {
