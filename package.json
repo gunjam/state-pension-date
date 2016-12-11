@@ -1,9 +1,10 @@
 {
   "name": "state-pension-age",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
-  "main": "app.js",
+  "main": "src/get-state-pension-date/get-state-pension-date.js",
   "scripts": {
+    "server": "node server.js",
     "test": "mocha"
   },
   "author": "",
