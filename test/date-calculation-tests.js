@@ -1,6 +1,6 @@
 'use strict';
 const assert = require('assert');
-const getStatePensionDateAsString = require('../src/get-state-pension-date/get-state-pension-date-as-string');
+const getStatePensionDateAsString = require('../src/get-state-pension-date').getStatePensionDateAsString;
 
 //
 // Start of tests

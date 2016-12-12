@@ -1,5 +1,6 @@
 'use strict';
-const isValidYYYYMMDDDate = require('../utilities/is-valid-yyyymmdd-date');
+const isValidYYYYMMDDDate = require('./utilities/is-valid-yyyymmdd-date');
+const pad = require('./utilities/pad');
 const statePensionAgeData = require('./spa-data');
 
 //
@@ -7,9 +8,9 @@ const statePensionAgeData = require('./spa-data');
 // 'Date of birth'.
 //
 // Returns: 'undefined' if unable to calculate the date, otherwise it returns the
-//          state pension date as a string in the format YYYY-MM-DD
+//          state pension date as a Date object
 //
-module.exports = function (dateOfBirth, gender) {
+const getStatePensionDate = function (dateOfBirth, gender) {
 	let result;
 
 	// Don't bother going any further if the input params are not valid
@@ -90,6 +91,20 @@ module.exports = function (dateOfBirth, gender) {
 };
 
 //
+// Function to return the date as a string in the YY-MM-DD format
+//
+const getStatePensionDateAsString = function (dateOfBirth, gender) {
+	let result;
+	const statePensionDate = getStatePensionDate(dateOfBirth, gender);
+
+	if (statePensionDate !== undefined) {
+		result = `${statePensionDate.getFullYear()}-${pad(statePensionDate.getMonth() + 1, '0', 2)}-${pad(statePensionDate.getDate(), '0', 2)}`;
+	}
+
+	return result;
+};
+
+//
 // Function to verify we have valid input data
 //
 function validateInputs(dateOfBirth, gender) {
@@ -110,3 +125,9 @@ function validateInputs(dateOfBirth, gender) {
 
 	return result;
 } // End function validateInputs()
+
+// Export our two main functions
+module.exports = {
+	getStatePensionDate,
+	getStatePensionDateAsString
+};
