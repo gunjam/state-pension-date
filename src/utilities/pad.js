@@ -2,7 +2,7 @@
 /*
 * Utility function to pad a value with leading characters
 */
-module.exports = function (value, padCharacter, requiredLength) {
+module.exports = (value, padCharacter, requiredLength) => {
 	let valueString = value.toString();
 
 	while (valueString.length < requiredLength) {
@@ -10,4 +10,4 @@ module.exports = function (value, padCharacter, requiredLength) {
 	}
 
 	return valueString;
-}; // End function pad()
+}; // End function

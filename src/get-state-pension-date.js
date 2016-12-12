@@ -10,7 +10,7 @@ const statePensionAgeData = require('./spa-data');
 // Returns: 'undefined' if unable to calculate the date, otherwise it returns the
 //          state pension date as a Date object
 //
-const getStatePensionDate = function (dateOfBirth, gender) {
+const getStatePensionDate = (dateOfBirth, gender) => {
 	let result;
 
 	// Don't bother going any further if the input params are not valid
@@ -93,7 +93,7 @@ const getStatePensionDate = function (dateOfBirth, gender) {
 //
 // Function to return the date as a string in the YY-MM-DD format
 //
-const getStatePensionDateAsString = function (dateOfBirth, gender) {
+const getStatePensionDateAsString = (dateOfBirth, gender) => {
 	let result;
 	const statePensionDate = getStatePensionDate(dateOfBirth, gender);
 

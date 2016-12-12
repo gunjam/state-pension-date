@@ -3,7 +3,7 @@
 // Utility function to validate a date string is both in the correct
 // (YYYY-MM-DD) format, and is a valid date.
 //
-module.exports = function (dateString) {
+module.exports = dateString => {
 	const dateRegex = /^\d{4}-\d{1,2}-\d{1,2}$/;
 	const daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
