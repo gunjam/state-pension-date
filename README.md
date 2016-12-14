@@ -2,14 +2,11 @@
 
 This package can be used in two different ways.
 
-1) If installed as an NPM package as part of another project, then it provides
-two functions that return the State Pension Date for a given Date of Birth and
-Gender.
+1) Installed from a GitLab repository, as a dependency in your package.json file.
 
-2) If cloned from the repository, then you can start a server process that
-provides a REST API call to return the State Pension Date.
+2) Cloned from the repository to provide a simple REST based service.
 
-## 1) NPM package
+## 1) Package dependency
 
 This package, provides two simple functions that allows the calculation of the
 Date on which a UK citizen becomes elligible for their State Pension.
@@ -36,7 +33,7 @@ Where...
 ## Example
 
 ```shell
-npm install get-uk-state-pension-date
+npm install --save git+ssh://git@gitlab.itsshared.net:bereavement-support-payment/state-pension-date.git
 ```
 Once installed, then the functions can simply be required within a Javascrip file
 as follows...
@@ -71,8 +68,8 @@ Once running, the service will accept requests that supply a date of birth and a
 gender, and will return a simple piece of content showing the state pension
 date.
 
-This functionality is very simplistic, and was only developed as an aid
-during development.
+**Note:** This functionality is very simplistic, and was only developed as an aid
+during development.  It would require more work to make it into a robust service.
 
 Example query...
 
