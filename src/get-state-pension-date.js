@@ -18,6 +18,10 @@ const getStatePensionDate = (dateOfBirth, gender) => {
 		return result;
 	}
 
+	// Ensure we end up with the single char version of our gender variable
+	// I.e. convert 'MALE' to 'M' or 'FEMALE' to 'F'
+	gender = gender.substr(0, 1).toUpperCase();
+
 	const dateOfBirthDate = new Date(dateOfBirth);
 	let statePensionDate;
 
@@ -112,10 +116,12 @@ function validateInputs(dateOfBirth, gender) {
 
 	result = isValidYYYYMMDDDate(dateOfBirth);
 
-	// We only support gender of 'M', 'F' & ''
+	// We only support gender of 'M', 'MALE', 'F' & 'FEMALE'
 	if (typeof gender === 'string') {
 		if ((gender.toUpperCase() !== 'M') &&
+			(gender.toUpperCase() !== 'MALE') &&
             (gender.toUpperCase() !== 'F') &&
+            (gender.toUpperCase() !== 'FEMALE') &&
 			(gender !== '')) {
 			result = false;
 		}
