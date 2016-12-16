@@ -1250,4 +1250,38 @@ describe('getStatePensionDateAsString', () => {
 	it('should return 2088-02-29 when a DOB of 2020-02-29 is applied to a Male', () => {
 		assert.equal('2088-02-29', getStatePensionDateAsString('2020-02-29', 'M'));
 	});
+
+	//
+	// Ability to use 'male' & 'female' as gender values
+	//
+	// Verify we can supply 'female' insted of 'f' as a gender
+	it('should return 2088-02-29 when a DOB of 2020-02-29 is applied to a gender of \'female\'', () => {
+		assert.equal('2088-02-29', getStatePensionDateAsString('2020-02-29', 'female'));
+	});
+
+	// Verify we can supply 'male' insted of 'm' as a gender
+	it('should return 2088-02-29 when a DOB of 2020-02-29 is applied to a gender of \'male\'', () => {
+		assert.equal('2088-02-29', getStatePensionDateAsString('2020-02-29', 'male'));
+	});
+
+	// Verify we can supply 'FEMALE' insted of 'f' as a gender
+	it('should return 2088-02-29 when a DOB of 2020-02-29 is applied to a gender of \'FEMALE\'', () => {
+		assert.equal('2088-02-29', getStatePensionDateAsString('2020-02-29', 'FEMALE'));
+	});
+
+	// Verify we can supply 'FEMALE' insted of 'm' as a gender
+	it('should return 2088-02-29 when a DOB of 2020-02-29 is applied to a gender of \'MALE\'', () => {
+		assert.equal('2088-02-29', getStatePensionDateAsString('2020-02-29', 'MALE'));
+	});
+
+	// Verify we cannot supply 'FE' as a gender
+	it('should return undefined when a DOB of 2020-02-29 is applied to a gender of \'FE\'', () => {
+		assert.equal(undefined, getStatePensionDateAsString('2020-02-29', 'FE'));
+	});
+
+	// Verify we cannot supply 'MA' as a gender
+	it('should return undefined when a DOB of 2020-02-29 is applied to a gender of \'MA\'', () => {
+		assert.equal(undefined, getStatePensionDateAsString('2020-02-29', 'MA'));
+	});
+
 });

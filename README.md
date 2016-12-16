@@ -21,20 +21,24 @@ getStatePensionDateAsString(dateOfBirth, gender)
 Where...
 
 * 'dateOfBirth' must be in the YYYY-MM-DD format.
-* 'gender' must be either 'F' (Female), or 'M' (Male). 
+* 'gender' must be one of 'F', 'FEMALE', 'M' or 'MALE' (case insensitive). 
 * YYYY-MM-DD is the only format supported.
 * The YYYY section of the Date of Birth must be in the range 1000 - 4000 (Arbitrary limits imposed by author).
 * The 'getStatePensionDate' function returns a Date object representing the State Pension Date.
 * The 'getStatePensionDateAsString' function returns a String containing the State Pension Date in the YYYY-MM-DD format.
 * If the State Pension Date cannot be determined, a value of 'undefined' will be returned (by both functions).
 * Invalid date values (e.g. 29 feb in non-leap years, or 31 April etc.) will result in 'undefined' being returned (by both functions).
-* Invalid gender values (anything other than 'F' or 'M') will result in 'undefined' being returned (by both functions).
+* Invalid gender values (anything other than 'F', 'FEMALE', 'M' or 'MALE') will result in 'undefined' being returned (by both functions).
 
 ## Example
 
 ```shell
 npm install --save git+ssh://git@gitlab.itsshared.net:bereavement-support-payment/state-pension-date.git
 ```
+`
+** NOTE: In order to use the above install, you will need to have the relevant SSH authentication in place. **
+`
+
 Once installed, then the functions can simply be required within a Javascrip file
 as follows...
 
@@ -48,7 +52,10 @@ const getUkStatePensionDateAsString = UKStatePension.getUkStatePensionDateAsStri
 // Get state pension date for a male born on 25 March 1990
 const pensionDate = getUkStatePensionDate('1990-03-25', 'M');
 
-// Get the same item as a string
+// Write result to console
+console.log(`For a male born on 25 March 1990, their state Pension Date would be ${pensionDate}`);
+
+// Get the same item as a string in the YYYY-MM-DD format
 const pensionDateString = getUkStatePensionDateAsString('1990-03-25', 'M');
 
 // Write result to console

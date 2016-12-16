@@ -1,6 +1,5 @@
 const assert = require('assert');
 const getStatePensionDate = require('../src/get-state-pension-date').getStatePensionDate;
-const getStatePensionDateAsString = require('../src/get-state-pension-date').getStatePensionDateAsString;
 
 describe('getStatePensionDate', () => {
 	// Invalid year
@@ -44,35 +43,5 @@ describe('getStatePensionDate', () => {
 	// Without a gender, we can't be expected to match a rule
 	it('should return \'undefined\' when a DOB of 1950-04-05 is supplied with \'\'', () => {
 		assert.equal(undefined, getStatePensionDate('1952-12-05', ''));
-	});
-
-	// Verify we can supply 'female' insted of 'f' as a gender
-	it('should return 2088-02-29 when a DOB of 2020-02-29 is applied to a gender of \'female\'', () => {
-		assert.equal('2088-02-29', getStatePensionDateAsString('2020-02-29', 'female'));
-	});
-
-	// Verify we can supply 'male' insted of 'm' as a gender
-	it('should return 2088-02-29 when a DOB of 2020-02-29 is applied to a gender of \'male\'', () => {
-		assert.equal('2088-02-29', getStatePensionDateAsString('2020-02-29', 'male'));
-	});
-
-	// Verify we can supply 'FEMALE' insted of 'f' as a gender
-	it('should return 2088-02-29 when a DOB of 2020-02-29 is applied to a gender of \'FEMALE\'', () => {
-		assert.equal('2088-02-29', getStatePensionDateAsString('2020-02-29', 'FEMALE'));
-	});
-
-	// Verify we can supply 'FEMALE' insted of 'm' as a gender
-	it('should return 2088-02-29 when a DOB of 2020-02-29 is applied to a gender of \'MALE\'', () => {
-		assert.equal('2088-02-29', getStatePensionDateAsString('2020-02-29', 'MALE'));
-	});
-
-	// Verify we cannot supply 'FE' as a gender
-	it('should return undefined when a DOB of 2020-02-29 is applied to a gender of \'FE\'', () => {
-		assert.equal(undefined, getStatePensionDateAsString('2020-02-29', 'FE'));
-	});
-
-	// Verify we cannot supply 'MA' as a gender
-	it('should return undefined when a DOB of 2020-02-29 is applied to a gender of \'MA\'', () => {
-		assert.equal(undefined, getStatePensionDateAsString('2020-02-29', 'MA'));
 	});
 });
