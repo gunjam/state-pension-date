@@ -23,7 +23,7 @@ const getStatePensionDate = (dateOfBirth, gender) => {
 	gender = gender.substr(0, 1).toUpperCase();
 
 	const dateOfBirthDate = new Date(dateOfBirth);
-	let statePensionDate;
+	let statePensionDate; // Defaults to 'undefined'
 
 	// See if we can find a rule in our dataset that matches our DOB & gender
 	const ageData = statePensionAgeData.find(currentElement => {
@@ -80,7 +80,7 @@ const getStatePensionDate = (dateOfBirth, gender) => {
 			}
 
 			default: {
-				statePensionDate = undefined;
+				// Nothing to do. statePensionDate should have defaulted to 'undefined';
 			}
 		}
 

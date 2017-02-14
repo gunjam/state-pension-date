@@ -1,3 +1,11 @@
+# Visual Studio Code config file
 .vscode
+
+# Node dependencies
 node_modules
+
+# Log files
 *.log
+
+# Istanbul code coverage results
+coverage

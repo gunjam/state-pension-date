@@ -787,7 +787,7 @@ const statePensionAgeData = [
 		}
 	},
 	{
-		periodStart: '1978-03-06',
+		periodStart: '1978-04-06',
 		periodEnd: '',
 		gender: '',
 		pensionDate: {
